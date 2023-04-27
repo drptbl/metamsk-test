@@ -4,14 +4,6 @@ import * as metamask from "@synthetixio/synpress/commands/metamask";
 // metamask add and changeNetwork to ("Polygon Network");
 
 test("connect wallet using default metamask account", async ({ page }) => {
-  metamask.addNetwork({
-    networkName: "Polygon Network",
-    rpcUrl: "https://polygon-rpc.com",
-    chainId: "137",
-    symbol: "MATIC",
-    blockExplorer: "https://polygonscan.com",
-    isTestnet: false,
-  });
   await page.goto("https://ace-frontend.prominencegames.io/signin");
   await page.getByLabel("Email").type("ighmazcool@gmail.com");
   await page.getByLabel("Password").type("iamighmaz1234");

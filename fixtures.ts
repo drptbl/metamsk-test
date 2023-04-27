@@ -35,11 +35,17 @@ export const test = base.extend<{
     await initialSetup(chromium, {
       secretWordsOrPrivateKey:
         "test test test test test test test test test test test junk",
-      network: "Polygon Network",
+      network: {
+        networkName: "Polygon Network",
+        rpcUrl: "https://polygon-rpc.com",
+        chainId: "137",
+        symbol: "MATIC",
+        blockExplorer: "https://polygonscan.com",
+        isTestnet: false,
+      },
       password: "Tester@1234",
       enableAdvancedSettings: true,
     });
-
     await use(context);
     await context.close();
   },
